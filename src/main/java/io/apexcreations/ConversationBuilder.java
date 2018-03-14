@@ -14,7 +14,7 @@ public class ConversationBuilder {
     private String exitCommand;
     private Conversable forWhom;
 
-    public ConversationBuilder(Conversable forWhom) {
+    public ConversationBuilder(Conversable forWhom, Prompt initialPrompt) {
         this.forWhom = forWhom;
         this.initialPrompt = initialPrompt;
     }
