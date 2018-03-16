@@ -42,7 +42,7 @@ public class Conversation {
         }
         ended = false;
         currentPrompt = initialPrompt;
-        conversationContext.getForWhom().beginConversation(this);
+        outputNextPrompt();
     }
 
     public void outputNextPrompt() {
@@ -50,8 +50,7 @@ public class Conversation {
             end(new ConversationEndEvent(this));
             return;
         }
-        conversationContext.getForWhom()
-                .sendMessage(currentPrompt.getPromptText(conversationContext));
+        conversationContext.getForWhom().sendMessage(currentPrompt.getPromptText(conversationContext));
         if (!currentPrompt.waitForInput(conversationContext)) {
             currentPrompt = currentPrompt.processInput(conversationContext, null);
             outputNextPrompt();

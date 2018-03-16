@@ -19,6 +19,10 @@ public class ConversationBuilder {
         this.initialPrompt = initialPrompt;
     }
 
+    public ConversationBuilder(Prompt initialPrompt) {
+        this.initialPrompt = initialPrompt;
+    }
+
     public ConversationBuilder forWhom(Conversable forWhom) {
         this.forWhom = forWhom;
         return this;
